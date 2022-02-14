@@ -18,14 +18,14 @@ export const Container = styled.div`
       text-transform: uppercase;
       font-weight: 900;
       line-height: 1.875rem;
-      text-shadow: 10px 5px 5px rgba(0, 0, 0, .2);
+      text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
     }
   }
 
   div {
     padding: 1.25rem 2.875rem;
     background: var(--text);
-    border-radius: 8px;
+    border-radius: 0.5rem;
 
     display: flex;
     flex-direction: column;
@@ -39,12 +39,27 @@ export const Container = styled.div`
     }
     h2 {
       color: var(--grey-700);
-      font-size: 42px;
+      font-size: 2.625rem;
       font-weight: 900;
     }
   }
 
-  @media (max-width: 750px){
+  @media (max-width: 750px) {
     width: 100%;
+  }
+
+  @media (max-width: 620px) {
+    div {
+      padding: 1rem 1.5rem;
+    }
+    ul {
+      li {
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        line-height: 1.875rem;
+        text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+      }
+    }
   }
 `;

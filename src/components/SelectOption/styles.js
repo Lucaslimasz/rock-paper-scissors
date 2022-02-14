@@ -25,4 +25,16 @@ export const Container = styled.div`
   .scissors {
     grid-column: 3/4;
   }
+
+  @media (max-width: 620px) {
+    grid-template-columns: 120px 80px 120px;
+    grid-row-gap: 3rem;
+    background-size: 230px;
+    .rock {
+      margin-left: 90px;
+    }
+    .scissors {
+      margin-right: 200px;
+    }
+  }
 `;
