@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import Score from "../../components/Score";
 import SelectOption from "../../components/SelectOption";
@@ -11,6 +11,7 @@ import * as S from "./styles";
 export default function Home() {
   const [isModalRules, setIsModalRules] = useState(false);
   const [optionSelected, setOptionSelected] = useState("");
+  const [score, setScore] = useState(0);
 
   const handleCloseModalRules = () => {
     setIsModalRules(false);
@@ -20,14 +21,25 @@ export default function Home() {
     setOptionSelected(props);
   };
 
+  const handleScoreValue = useCallback((props) => {
+    if (props === "player") {
+      setScore((prevState) => prevState + 3);
+    } else if (props === "computer") {
+      setScore((prevState) => prevState - 2);
+    } else {
+      return;
+    }
+  }, []);
+
   return (
     <>
       <S.Container>
-        <Score />
+        <Score score={score} />
         {optionSelected ? (
           <GameResult
             optionSelected={optionSelected}
             handleOptionSelected={handleOptionSelected}
+            handleScoreValue={handleScoreValue}
           />
         ) : (
           <SelectOption handleOption={handleOptionSelected} />

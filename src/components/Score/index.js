@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-export default function Score() {
+export default function Score({score}) {
   return (
     <S.Container>
       <ul>
@@ -10,7 +10,7 @@ export default function Score() {
       </ul>
       <div>
         <span>score</span>
-        <h2>0</h2>
+        <h2>{score}</h2>
       </div>
     </S.Container>
   );

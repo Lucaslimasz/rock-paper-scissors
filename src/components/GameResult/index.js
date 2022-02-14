@@ -5,7 +5,11 @@ import ButtonIcon from "../ButtonIcon";
 
 import * as S from "./styles";
 
-export default function GameResult({ optionSelected, handleOptionSelected }) {
+export default function GameResult({
+  optionSelected,
+  handleOptionSelected,
+  handleScoreValue,
+}) {
   const [computerSelected, setComputerSelected] = useState("");
   const [resultGame, setResultGame] = useState("");
 
@@ -25,7 +29,8 @@ export default function GameResult({ optionSelected, handleOptionSelected }) {
   useEffect(() => {
     const response = ResultGame(optionSelected, computerSelected);
     setResultGame(response);
-  }, [computerSelected, optionSelected]);
+    handleScoreValue(response);
+  }, [computerSelected, optionSelected, handleScoreValue]);
 
   return (
     <S.Container>
