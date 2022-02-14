@@ -2,12 +2,24 @@ import ButtonIcon from "../ButtonIcon";
 
 import * as S from "./styles";
 
-export default function SelectOption() {
+export default function SelectOption({ handleOption }) {
   return (
     <S.Container>
-      <ButtonIcon type="Paper" color="var(--blue)" className="paper" />
-      <ButtonIcon type="Rock" color="var(--red)" className="rock" />
-      <ButtonIcon type="Scissors" color="var(--yellow)" className="scissors" />
+      <ButtonIcon
+        type="Paper"
+        className="paper"
+        onClick={() => handleOption("Paper")}
+      />
+      <ButtonIcon
+        type="Rock"
+        className="rock"
+        onClick={() => handleOption("Rock")}
+      />
+      <ButtonIcon
+        type="Scissors"
+        className="scissors"
+        onClick={() => handleOption("Scissors")}
+      />
     </S.Container>
   );
 }
