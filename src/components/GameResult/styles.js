@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -21,6 +21,22 @@ export const Container = styled.div`
         width: 12rem;
         height: 12rem;
         border-radius: 7rem;
+      }
+    }
+  }
+
+  @media (max-width: 920px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    position: relative;
+    gap: 2rem;
+    div {
+      div {
+        div {
+          width: 7rem;
+          height: 7rem;
+        }
       }
     }
   }
@@ -49,6 +65,16 @@ export const PlayResult = styled.span`
     ${({ defeat }) => defeat && "color: var(--red);"}
     margin-top: 1rem;
   }
+
+  @media (max-width: 920px) {
+    position: absolute;
+    width: 300px;
+    bottom: 20px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 `;
 
 export const LoadingOptionComputer = styled.div`
@@ -57,4 +83,10 @@ export const LoadingOptionComputer = styled.div`
   background: #15153d;
   border-radius: 100%;
   border: 2.5rem solid var(--background);
+
+  @media (max-width: 920px){
+    width: 9rem;
+    height: 9rem;
+    border: 1rem solid var(--background);
+  }
 `;
